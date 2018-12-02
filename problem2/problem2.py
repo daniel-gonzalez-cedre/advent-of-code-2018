@@ -27,4 +27,5 @@ for i in range(0, 26):
             if j != k and np.array_equal(dd[j], dd[k]):
                 box = [chr(int(x)) for x in dd[j]]
 
+#SOLUTION TO PART 2
 print('box: ' + ''.join(box))
