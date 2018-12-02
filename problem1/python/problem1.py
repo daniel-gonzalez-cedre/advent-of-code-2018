@@ -1,5 +1,3 @@
-# dan 明俊
-
 from __future__ import print_function
 import numpy as np
 
@@ -9,10 +7,9 @@ with open("./input") as f_input:
     print(np.sum(changes))
 
     i = 0
-    flag = True
     freq = 0
     frequencies = np.asarray([])
-    while flag:
+    while True:
         if i >= len(changes):
             i = 0
         frequencies = np.append(frequencies, [freq])
@@ -20,6 +17,5 @@ with open("./input") as f_input:
         if len(np.where(frequencies == freq)[0]) != 0:
             #SOLUTION TO PART 2
             print(freq)
-            flag = False
             break
         i += 1
