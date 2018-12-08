@@ -65,4 +65,3 @@ print(int(guards_inv[sleep_guard])*sleep_minute)
 #SOLUTION TO PART 2
 coords = np.unravel_index(records.argmax(), records.shape)
 print(int(guards_inv[coords[0]])*coords[1])
-
