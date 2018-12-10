@@ -1,5 +1,5 @@
 # Advent of Code 2018
-⚠ Due to finals week, these solutions will be noticeably behind the current AoC day until Dec 15. ⚠
+:warning: Due to finals week, these solutions will be noticeably behind the current AoC day until Dec 15. :warning:
 
 My attempt at Advent of Code 2018.
 This is primarily for gaining experience with Python and Haskell (and maybe Nim).
