@@ -6,11 +6,11 @@ class Node():
         self.prev = None
         self.next = None
 
-def react(x, y):
+def reacts(x, y):
     return (abs(ord(x) - ord(y)) - 32) == 0
 
 def equiv(x, y):
-    return react(x, y) or x == y
+    return reacts(x, y) or x == y
 
 def part_one(string, remove=' '):
     #CREATE A DOUBLY-LINKED LIST OF THE INPUT DATA
@@ -21,14 +21,14 @@ def part_one(string, remove=' '):
             curr.next = Node(char)
             curr.next.prev = curr
             curr = curr.next
-    #REACT THE LIST
+    #ANNEAL THE LIST
     curr = head.next
     while curr != None:
         if curr.data == None:
             curr = curr.next
         if curr.next == None:
             break
-        elif react(curr.data, curr.next.data):
+        elif reacts(curr.data, curr.next.data):
             curr = curr.prev
             curr.next = curr.next.next.next
             if curr.next != None:
