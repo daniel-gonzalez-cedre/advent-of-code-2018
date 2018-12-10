@@ -1,4 +1,4 @@
-# Advent of Code 2018
+# :christmas_tree: Advent of Code 2018 :christmas_tree:
 :warning: Due to finals week, these solutions will be noticeably behind the current AoC day until Dec 15. :warning:
 
 My attempt at Advent of Code 2018.
