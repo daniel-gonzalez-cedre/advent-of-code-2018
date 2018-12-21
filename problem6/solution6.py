@@ -1,36 +1,27 @@
 from __future__ import print_function
 import numpy as np
+np.set_printoptions(threshold=np.inf, linewidth=np.inf)
 
-def cartesian(a, b):
-    return [[x, y] for x in a for y in b]
+def manhattan((x1, y1), (x2, y2)):
+    return np.abs(x1 - x2) + np.abs(y1 - y2)
 
-def manhattan(x, y, points):
-    dist = np.infty
-    for i in range(0, len(points)):
-        px, py = points[i]
-        d = np.abs(px - x) + np.abs(py - y)
-        if d < dist:
-            dist = d
-            index = i
-            flag = False
-        elif d == dist:
-            flag = True
-    if flag:
-        return 0
+def closest(x, y, points):
+    distances = [(manhattan((x, y), points[i]), i) for i in range(len(points))]
+    distances.sort()
+    if distances[0][0] < distances[1][0]:
+        return distances[0][1] + 1
     else:
-        return index+1
+        return 0
 
-with open('./input.txt') as f:
-    points = np.asarray([[int(x[:-1]), int(y)] for x, y in [z.split(' ') for z in f.read().splitlines()]])
+def part_one(points):
+    matrix = np.zeros(np.max(points, axis=0))
+    for i, j in [[x, y] for x in range(matrix.shape[0]) for y in range(matrix.shape[1])]:
+        matrix[i][j] = closest(i, j, points)
+    inf_areas = np.unique(np.concatenate([matrix[0], matrix[-1], matrix.T[0], matrix.T[-1]]))
+    return np.max([matrix[matrix==k].sum()/k for k in range(1, points.shape[0]+1) if k not in inf_areas])
 
-matrix = np.zeros(np.max(points, axis=0))
+#READ THE INPUT
+points = np.asarray([(int(x[:-1]), int(y)) for x, y in [z.split(' ') for z in open('./input.txt').read().splitlines()]])
 
-for i, j in cartesian(range(0, matrix.shape[0]), range(0, matrix.shape[1])):
-    matrix[i][j] = manhattan(i, j, points)
-print(matrix)
-
-infinities = np.unique(np.concatenate([matrix[0][:], matrix[:][0], matrix[-1][:], matrix[:][-1]]))
-print(infinities)
-
-area = np.max([matrix[matrix==k].sum()/k for k in range(1, len(points)+1) if k not in infinities])
-print(area)
+#SOLUTION TO PART 1
+print(part_one(points))
