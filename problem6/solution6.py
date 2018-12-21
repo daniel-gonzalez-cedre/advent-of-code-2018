@@ -1,6 +1,5 @@
 from __future__ import print_function
 import numpy as np
-np.set_printoptions(threshold=np.inf, linewidth=np.inf)
 
 def manhattan((x1, y1), (x2, y2)):
     return np.abs(x1 - x2) + np.abs(y1 - y2)
