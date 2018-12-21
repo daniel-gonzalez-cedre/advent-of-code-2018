@@ -10,15 +10,9 @@ def closest(x, y, points, threshold):
     distances.sort()
     score = np.sum(np.asarray(distances), axis=0)[0]
     if distances[0][0] < distances[1][0] and score < threshold:
-        if score < threshold:
-            return (distances[0][1] + 1, 1)
-        else:
-            return (distances[0][1] + 1, 0)
+        return (distances[0][1] + 1, 1) if score < threshold else (distances[0][1] + 1, 0)
     else:
-        if score < threshold:
-            return (0, 1)
-        else:
-            return (0, 0)
+        return (0, 1) if score < threshold else (0, 0)
 
 def solution(points):
     matrix = np.zeros(np.max(points, axis=0))
