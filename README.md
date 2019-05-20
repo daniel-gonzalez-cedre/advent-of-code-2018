@@ -1,5 +1,5 @@
 # :christmas_tree: Advent of Code 2018 :christmas_tree:
-:warning: this repo has been abandoned until further notice to focus on more interesting projects :warning:
+:warning: This repo has been abandoned until further notice to focus on more interesting projects :warning:
 
 My attempt at Advent of Code 2018.
 This is primarily for gaining experience with Python and Haskell (and maybe Nim).
