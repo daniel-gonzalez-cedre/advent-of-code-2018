@@ -2,7 +2,7 @@
 
 :star: :star: :star: :star: :star: :star: :star: :star: :star: :star: :star: :star: :star:
 
-:warning: This repo has been abandoned until further notice to focus on more interesting projects :warning:
+:coffin: This repo has been abandoned until further notice to focus on more interesting projects :coffin:
 
 My attempt at Advent of Code 2018.
 This is primarily for gaining experience with Python and Haskell (and maybe Nim).
