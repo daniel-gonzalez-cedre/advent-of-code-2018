@@ -1,4 +1,7 @@
 # :christmas_tree: Advent of Code 2018 :christmas_tree:
+
+:star: :star: :star: :star: :star: :star: :star: :star: :star: :star: :star: :star: :star:
+
 :warning: This repo has been abandoned until further notice to focus on more interesting projects :warning:
 
 My attempt at Advent of Code 2018.
